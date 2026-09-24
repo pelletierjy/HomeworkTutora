@@ -42,48 +42,10 @@ import { ChatWidgetComponent } from '../../shared/components/chat-widget/chat-wi
       <!-- Chat Widget Section — fills remaining viewport height -->
       <section
         id="chat"
-        class="container mx-auto flex-1 px-4 pb-12"
+        class="container mx-auto flex-1 px-4 pb-6"
       >
-        <div class="mb-6 text-center">
-          <h2 class="font-display text-2xl font-semibold text-[rgb(var(--color-text))]">
-            Ask your AI Tutor anything
-          </h2>
-          <p class="mt-2 text-sm text-[rgb(var(--color-text-secondary))]">
-            Powered by ConversiaCore
-          </p>
-        </div>
-        <div class="h-[calc(100vh-320px)] w-full">
+        <div class="h-[calc(100vh-280px)] w-full">
           <app-chat-widget class="h-full w-full" />
-        </div>
-      </section>
-
-      <!-- Features + Footer -->
-      <section id="features" class="container mx-auto px-4 py-16">
-        <div class="grid gap-8 md:grid-cols-3">
-          <div class="rounded-xl border border-[rgb(var(--color-border))] p-6 text-center">
-            <div class="mb-3 text-3xl">📚</div>
-            <h3 class="font-semibold text-[rgb(var(--color-text))]">Subjects</h3>
-            <p class="mt-2 text-sm text-[rgb(var(--color-text-secondary))]">
-              Math, Science, English, History, and more.
-            </p>
-            <span class="mt-3 text-xs text-accent-500">Coming soon</span>
-          </div>
-          <div class="rounded-xl border border-[rgb(var(--color-border))] p-6 text-center">
-            <div class="mb-3 text-3xl">🎓</div>
-            <h3 class="font-semibold text-[rgb(var(--color-text))]">Grades</h3>
-            <p class="mt-2 text-sm text-[rgb(var(--color-text-secondary))]">
-              Tailored support from elementary to high school.
-            </p>
-            <span class="mt-3 text-xs text-accent-500">Coming soon</span>
-          </div>
-          <div class="rounded-xl border border-[rgb(var(--color-border))] p-6 text-center">
-            <div class="mb-3 text-3xl">🧠</div>
-            <h3 class="font-semibold text-[rgb(var(--color-text))]">Knowledge Base</h3>
-            <p class="mt-2 text-sm text-[rgb(var(--color-text-secondary))]">
-              A searchable library of solved problems and study guides.
-            </p>
-            <span class="mt-3 text-xs text-accent-500">Coming soon</span>
-          </div>
         </div>
       </section>
 
