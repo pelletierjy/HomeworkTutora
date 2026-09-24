@@ -46,7 +46,7 @@ import { ChatWidgetComponent } from '../../shared/components/chat-widget/chat-wi
             Ask your AI Tutor anything
           </h2>
           <p class="mt-2 text-sm text-[rgb(var(--color-text-secondary))]">
-            Powered by an external chat bot (integration coming soon)
+            Powered by ConversiaCore
           </p>
         </div>
         <div class="flex justify-center">

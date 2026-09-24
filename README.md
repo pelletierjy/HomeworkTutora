@@ -38,7 +38,7 @@ src/app/
 │   └── components/
 │       ├── header/                 # Sticky header with nav + theme toggle
 │       ├── theme-toggle/           # Sun/moon toggle button
-│       └── chat-widget/            # Chat bot embed (placeholder)
+│       └── chat-widget/            # Embeds ConversiaCore's <conversia-app> widget
 ├── app.ts            # Root component (router outlet)
 ├── app.config.ts     # DI / providers
 ├── app.routes.ts     # Route definitions
@@ -76,6 +76,6 @@ ng test
 
 ## Next Steps
 
-- Wire up the external chat bot via the `chatBotUrl` input on `<app-chat-widget>`
 - Implement Subjects and Knowledge Base features
-- Add grade-level filtering and subject-specific routing
+- Add grade-level filtering and subject-specific routing, then pass `subject`/`grade-level` attributes to `<conversia-app>` to skip its built-in picker
+- In ConversiaCore's admin panel (`/admin` → Host Apps), configure an `appConfig/HomeworkTutora` document with this app's system prompt and guardrails
