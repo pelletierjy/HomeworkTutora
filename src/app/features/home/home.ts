@@ -1,0 +1,100 @@
+import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { HeaderComponent } from '../../shared/components/header/header';
+import { ChatWidgetComponent } from '../../shared/components/chat-widget/chat-widget';
+
+@Component({
+  selector: 'app-home',
+  standalone: true,
+  imports: [HeaderComponent, ChatWidgetComponent, RouterLink],
+  template: `
+    <main class="min-h-screen bg-[rgb(var(--color-bg))]">
+      <app-header />
+
+      <!-- Hero -->
+      <section class="container mx-auto px-4 py-16 text-center md:py-24">
+        <h1 class="font-display text-4xl font-extrabold tracking-tight text-[rgb(var(--color-text))] sm:text-5xl md:text-6xl">
+          <span class="block">Homework made easier,</span>
+          <span class="bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent"
+            >one question at a time.</span
+          >
+        </h1>
+        <p class="mx-auto mt-6 max-w-2xl text-lg text-[rgb(var(--color-text-secondary))]">
+          Homework Tutora is your AI-powered tutor helper. Get step-by-step explanations,
+          practice problems, and study guides across math, science, languages, and more.
+        </p>
+        <div class="mt-8 flex justify-center gap-4">
+          <button
+            (click)="scrollToChat()"
+            class="rounded-xl bg-primary-500 px-6 py-3 font-medium text-white shadow-lg transition-transform hover:scale-105 hover:bg-primary-600"
+          >
+            Try the Chat Tutor
+          </button>
+          <a
+            routerLink="/subjects"
+            class="rounded-xl border border-[rgb(var(--color-border))] px-6 py-3 font-medium text-[rgb(var(--color-text))] transition-colors hover:bg-[rgb(var(--color-bg-secondary))]"
+          >
+            Browse Subjects
+          </a>
+        </div>
+      </section>
+
+      <!-- Chat Widget Section -->
+      <section id="chat" class="container mx-auto px-4 pb-12">
+        <div class="mb-6 text-center">
+          <h2 class="font-display text-2xl font-semibold text-[rgb(var(--color-text))]">
+            Ask your AI Tutor anything
+          </h2>
+          <p class="mt-2 text-sm text-[rgb(var(--color-text-secondary))]">
+            Powered by an external chat bot (integration coming soon)
+          </p>
+        </div>
+        <div class="flex justify-center">
+          <app-chat-widget class="h-[500px]" />
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section id="features" class="container mx-auto px-4 py-16">
+        <div class="grid gap-8 md:grid-cols-3">
+          <div class="rounded-xl border border-[rgb(var(--color-border))] p-6 text-center">
+            <div class="mb-3 text-3xl">📚</div>
+            <h3 class="font-semibold text-[rgb(var(--color-text))]">Subjects</h3>
+            <p class="mt-2 text-sm text-[rgb(var(--color-text-secondary))]">
+              Math, Science, English, History, and more.
+            </p>
+            <span class="mt-3 text-xs text-accent-500">Coming soon</span>
+          </div>
+          <div class="rounded-xl border border-[rgb(var(--color-border))] p-6 text-center">
+            <div class="mb-3 text-3xl">🎓</div>
+            <h3 class="font-semibold text-[rgb(var(--color-text))]">Grades</h3>
+            <p class="mt-2 text-sm text-[rgb(var(--color-text-secondary))]">
+              Tailored support from elementary to high school.
+            </p>
+            <span class="mt-3 text-xs text-accent-500">Coming soon</span>
+          </div>
+          <div class="rounded-xl border border-[rgb(var(--color-border))] p-6 text-center">
+            <div class="mb-3 text-3xl">🧠</div>
+            <h3 class="font-semibold text-[rgb(var(--color-text))]">Knowledge Base</h3>
+            <p class="mt-2 text-sm text-[rgb(var(--color-text-secondary))]">
+              A searchable library of solved problems and study guides.
+            </p>
+            <span class="mt-3 text-xs text-accent-500">Coming soon</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="border-t border-[rgb(var(--color-border))] py-6">
+        <div class="container mx-auto px-4 text-center text-sm text-[rgb(var(--color-text-tertiary))]">
+          <p>© 2026 Homework Tutora — AI Tutor Helper (Placeholder Build)</p>
+        </div>
+      </footer>
+    </main>
+  `,
+})
+export class HomeComponent {
+  scrollToChat(): void {
+    document.getElementById('chat')?.scrollIntoView({ behavior: 'smooth' });
+  }
+}
