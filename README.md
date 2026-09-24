@@ -7,10 +7,9 @@ architecture designed for future growth.
 
 ## Features
 
-- **AI Chat Tutor** — Widget that embeds an external chat bot for real-time homework help
+- **AI Chat Tutor** — Full-screen ConversiaCore widget (`<conversia-app>`) providing real-time, RAG-powered homework assistance
 - **Light / Dark theme** — System-aware toggle with preference persistence
-- **Subjects & Grades** — Planned sections for subject browsing and grade-level filtering
-- **Knowledge Base** — Planned searchable library of solved problems and study guides
+- **Clean landing page** — Simple intro with a hero and a button to open the AI Tutor
 
 ## Tech Stack
 
@@ -31,19 +30,26 @@ src/app/
 │       └── theme.service.ts        # Theme state (light/dark/system, localStorage)
 ├── features/
 │   ├── home/
-│   │   └── home.ts                 # Landing page — hero, chat widget, feature cards
-│   └── placeholder/
-│       └── placeholder.ts          # Reusable "coming soon" page
+│   │   └── home.ts                 # Landing page — hero + intro
+│   └── ai-tutor/
+│       └── ai-tutor.ts             # Full-screen ConversiaCore chat widget
 ├── shared/
 │   └── components/
 │       ├── header/                 # Sticky header with nav + theme toggle
 │       ├── theme-toggle/           # Sun/moon toggle button
-│       └── chat-widget/            # Chat bot embed (placeholder)
+│       └── chat-widget/            # Embeds ConversiaCore's <conversia-app> widget
 ├── app.ts            # Root component (router outlet)
 ├── app.config.ts     # DI / providers
 ├── app.routes.ts     # Route definitions
 └── app.html          # Router outlet
 ```
+
+## Routes
+
+| Path       | Component      | Description                              |
+|------------|----------------|------------------------------------------|
+| `/`        | Home           | Landing page with hero and intro         |
+| `/ai-tutor`| AI Tutor       | Full-screen chat bot (ConversiaCore)     |
 
 ## Development Server
 
@@ -74,8 +80,22 @@ ng test
 - CSS custom properties (`--color-bg`, `--color-text`, etc.) drive all theme colors
 - `ThemeService` exposes an `isDark` signal for reactive consumption
 
+## ConversiaCore Integration
+
+The AI Tutor page loads the external chat bot via dynamic script injection:
+
+```js
+const script = document.createElement('script');
+script.src = 'https://pelletierjy.github.io/ConversiaCore/conversia-core-widget.js';
+document.head.appendChild(script);
+```
+
+The `<conversia-app>` web component receives:
+- `context="HomeworkTutora"` — identifies this app instance
+- `theme="light" | "dark"` — reactive theme prop
+- `lang="en"` — language
+
 ## Next Steps
 
-- Wire up the external chat bot via the `chatBotUrl` input on `<app-chat-widget>`
-- Implement Subjects and Knowledge Base features
-- Add grade-level filtering and subject-specific routing
+- Add `subject` and `grade-level` attributes to `<conversia-app>` to skip its built-in picker
+- In ConversiaCore's admin panel (`/admin` → Host Apps), configure an `appConfig/HomeworkTutora` document with this app's system prompt and guardrails

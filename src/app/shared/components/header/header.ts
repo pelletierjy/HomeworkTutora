@@ -24,22 +24,10 @@ import { ThemeToggleComponent } from '../theme-toggle/theme-toggle';
             >Home</a
           >
           <a
-            routerLink="/subjects"
+            routerLink="/ai-tutor"
             routerLinkActive="text-[rgb(var(--color-text))]"
             class="text-sm text-[rgb(var(--color-text-secondary))] transition-colors hover:text-[rgb(var(--color-text))]"
-            >Subjects</a
-          >
-          <a
-            routerLink="/grades"
-            routerLinkActive="text-[rgb(var(--color-text))]"
-            class="text-sm text-[rgb(var(--color-text-secondary))] transition-colors hover:text-[rgb(var(--color-text))]"
-            >Grades</a
-          >
-          <a
-            routerLink="/knowledge-base"
-            routerLinkActive="text-[rgb(var(--color-text))]"
-            class="text-sm text-[rgb(var(--color-text-secondary))] transition-colors hover:text-[rgb(var(--color-text))]"
-            >Knowledge Base</a
+            >AI Tutor</a
           >
           <app-theme-toggle />
         </div>
