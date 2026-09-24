@@ -1,0 +1,9 @@
+{
+  "buildCommand": "npm run build:i18n",
+  "outputDirectory": "dist/HomeworkTutora/browser",
+  "rewrites": [
+    { "source": "/en/:path*", "destination": "/en/index.html" },
+    { "source": "/fr/:path*", "destination": "/fr/index.html" },
+    { "source": "/es/:path*", "destination": "/es/index.html" }
+  ]
+}

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="es" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="home.hero.heading" datatype="html">
+        <source><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;block&quot;&gt;"/>Homework made easier,<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/><x id="START_TAG_SPAN_1" ctype="x-span_1" equiv-text="&lt;span class=&quot;bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent&quot;&gt;"/>one question at a time.<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+        <target><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;block&quot;&gt;"/>Las tareas más fáciles,<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/><x id="START_TAG_SPAN_1" ctype="x-span_1" equiv-text="&lt;span class=&quot;bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent&quot;&gt;"/>una pregunta a la vez.<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></target>
+      </trans-unit>
+      <trans-unit id="home.hero.subtitle" datatype="html">
+        <source> Homework Tutora is your AI-powered tutor helper. Get step-by-step explanations, practice problems, and study guides across math, science, languages, and more. </source>
+        <target> Homework Tutora es tu asistente tutor impulsado por IA. Obtén explicaciones paso a paso, ejercicios de práctica y guías de estudio en matemáticas, ciencias, idiomas y más. </target>
+      </trans-unit>
+      <trans-unit id="home.cta.openAiTutor" datatype="html">
+        <source> Open AI Tutor </source>
+        <target> Abrir el tutor IA </target>
+      </trans-unit>
+      <trans-unit id="home.footer.copyright" datatype="html">
+        <source>© 2026 Homework Tutora — AI Tutor Helper</source>
+        <target>© 2026 Homework Tutora — Asistente tutor IA</target>
+      </trans-unit>
+      <trans-unit id="chatWidget.brand" datatype="html">
+        <source>Homework Tutora</source>
+        <target>Homework Tutora</target>
+      </trans-unit>
+      <trans-unit id="chatWidget.subtitle" datatype="html">
+        <source>AI Tutor</source>
+        <target>Tutor IA</target>
+      </trans-unit>
+      <trans-unit id="chatWidget.loadError" datatype="html">
+        <source> The AI Tutor widget couldn&apos;t load. Please check your connection and try refreshing the page. </source>
+        <target> El widget del tutor IA no pudo cargar. Por favor, comprueba tu conexión e intenta actualizar la página. </target>
+      </trans-unit>
+      <trans-unit id="header.brand" datatype="html">
+        <source>Homework Tutora</source>
+        <target>Homework Tutora</target>
+      </trans-unit>
+      <trans-unit id="header.nav.home" datatype="html">
+        <source>Home</source>
+        <target>Inicio</target>
+      </trans-unit>
+      <trans-unit id="header.nav.aiTutor" datatype="html">
+        <source>AI Tutor</source>
+        <target>Tutor IA</target>
+      </trans-unit>
+      <trans-unit id="header.langSwitch.groupLabel" datatype="html">
+        <source>Language</source>
+        <target>Idioma</target>
+      </trans-unit>
+      <trans-unit id="themeToggle.ariaLabel.toLight" datatype="html">
+        <source>Switch to light theme</source>
+        <target>Cambiar a tema claro</target>
+      </trans-unit>
+      <trans-unit id="themeToggle.ariaLabel.toDark" datatype="html">
+        <source>Switch to dark theme</source>
+        <target>Cambiar a tema oscuro</target>
+      </trans-unit>
+      <trans-unit id="themeToggle.srOnlyLabel" datatype="html">
+        <source>Toggle theme</source>
+        <target>Alternar tema</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
