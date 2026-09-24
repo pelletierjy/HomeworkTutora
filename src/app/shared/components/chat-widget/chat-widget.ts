@@ -19,7 +19,7 @@ function loadConversiaWidgetScript(): void {
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   template: `
     <aside
-      class="flex h-full w-full max-w-sm flex-col overflow-hidden rounded-2xl border border-[rgb(var(--color-border))] bg-[rgb(var(--color-surface))] shadow-xl"
+      class="flex h-full w-full flex-col overflow-hidden rounded-2xl border border-[rgb(var(--color-border))] bg-[rgb(var(--color-surface))] shadow-xl"
     >
       <!-- Header -->
       <header class="flex items-center gap-3 bg-gradient-to-r from-primary-500 to-secondary-500 p-4 text-white">
@@ -32,9 +32,14 @@ function loadConversiaWidgetScript(): void {
         </div>
       </header>
 
-      <!-- ConversiaCore embedded tutor widget -->
+      <!-- ConversiaCore embedded tutor widget — fills remaining space -->
       <div class="min-h-0 flex-1">
-        <conversia-app context="HomeworkTutora" [attr.theme]="theme()" lang="en" class="block h-full w-full"></conversia-app>
+        <conversia-app
+          context="HomeworkTutora"
+          [attr.theme]="theme()"
+          lang="en"
+          class="block h-full w-full"
+        ></conversia-app>
       </div>
     </aside>
   `,

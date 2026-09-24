@@ -8,7 +8,7 @@ import { ChatWidgetComponent } from '../../shared/components/chat-widget/chat-wi
   standalone: true,
   imports: [HeaderComponent, ChatWidgetComponent, RouterLink],
   template: `
-    <main class="min-h-screen bg-[rgb(var(--color-bg))]">
+    <main class="flex min-h-screen flex-col bg-[rgb(var(--color-bg))]">
       <app-header />
 
       <!-- Hero -->
@@ -39,8 +39,11 @@ import { ChatWidgetComponent } from '../../shared/components/chat-widget/chat-wi
         </div>
       </section>
 
-      <!-- Chat Widget Section -->
-      <section id="chat" class="container mx-auto px-4 pb-12">
+      <!-- Chat Widget Section — fills remaining viewport height -->
+      <section
+        id="chat"
+        class="container mx-auto flex-1 px-4 pb-12"
+      >
         <div class="mb-6 text-center">
           <h2 class="font-display text-2xl font-semibold text-[rgb(var(--color-text))]">
             Ask your AI Tutor anything
@@ -49,12 +52,12 @@ import { ChatWidgetComponent } from '../../shared/components/chat-widget/chat-wi
             Powered by ConversiaCore
           </p>
         </div>
-        <div class="flex justify-center">
-          <app-chat-widget class="h-[500px]" />
+        <div class="h-[calc(100vh-320px)] w-full">
+          <app-chat-widget class="h-full w-full" />
         </div>
       </section>
 
-      <!-- Features Section -->
+      <!-- Features + Footer -->
       <section id="features" class="container mx-auto px-4 py-16">
         <div class="grid gap-8 md:grid-cols-3">
           <div class="rounded-xl border border-[rgb(var(--color-border))] p-6 text-center">
@@ -87,7 +90,7 @@ import { ChatWidgetComponent } from '../../shared/components/chat-widget/chat-wi
       <!-- Footer -->
       <footer class="border-t border-[rgb(var(--color-border))] py-6">
         <div class="container mx-auto px-4 text-center text-sm text-[rgb(var(--color-text-tertiary))]">
-          <p>© 2026 Homework Tutora — AI Tutor Helper (Placeholder Build)</p>
+          <p>&copy; 2026 Homework Tutora &mdash; AI Tutor Helper</p>
         </div>
       </footer>
     </main>
