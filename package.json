@@ -4,7 +4,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:fr": "ng serve --configuration=fr",
+    "start:es": "ng serve --configuration=es",
     "build": "ng build",
+    "build:i18n": "ng build --configuration production && node scripts/copy-root-redirect.mjs",
+    "serve:i18n": "node scripts/serve-local-i18n.mjs",
+    "extract-i18n": "ng extract-i18n --output-path src/locale",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
