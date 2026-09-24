@@ -7,7 +7,7 @@ architecture designed for future growth.
 
 ## Features
 
-- **AI Chat Tutor** — Widget that embeds an external chat bot for real-time homework help
+- **AI Chat Tutor** — Widget that embeds [ConversiaCore](https://github.com/pelletierjy/need-home-work) (`<conversia-app>`) for real-time, RAG-powered homework assistance
 - **Light / Dark theme** — System-aware toggle with preference persistence
 - **Subjects & Grades** — Planned sections for subject browsing and grade-level filtering
 - **Knowledge Base** — Planned searchable library of solved problems and study guides
