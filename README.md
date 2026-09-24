@@ -5,6 +5,8 @@ An Angular-based AI tutor helper application that provides on-demand homework as
 Built with **Angular 21** (standalone components, signals), **Tailwind CSS v4**, and a modern clean
 architecture designed for future growth.
 
+**🌐 Try it live:** https://homework-tutora.vercel.app/
+
 ## Features
 
 - **AI Chat Tutor** — Full-screen ConversiaCore widget (`<conversia-app>`) providing real-time, RAG-powered homework assistance
