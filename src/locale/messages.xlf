@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="home.hero.heading" datatype="html">
+        <source><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;block&quot;&gt;"/>Homework made easier,<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span
+          &gt;"/><x id="START_TAG_SPAN_1" ctype="x-span_1" equiv-text="&lt;span class=&quot;bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent&quot;
+            &gt;"/>one question at a time.<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span
+          &gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/home/home.ts</context>
+          <context context-type="linenumber">17,22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="home.hero.subtitle" datatype="html">
+        <source> Homework Tutora is your AI-powered tutor helper. Get step-by-step explanations, practice problems, and study guides across math, science, languages, and more. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/home/home.ts</context>
+          <context context-type="linenumber">23,26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="home.cta.openAiTutor" datatype="html">
+        <source> Open AI Tutor </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/home/home.ts</context>
+          <context context-type="linenumber">32,34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="home.footer.copyright" datatype="html">
+        <source>© 2026 Homework Tutora — AI Tutor Helper</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/home/home.ts</context>
+          <context context-type="linenumber">40,42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="chatWidget.brand" datatype="html">
+        <source>Homework Tutora</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/chat-widget/chat-widget.ts</context>
+          <context context-type="linenumber">23,24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="chatWidget.subtitle" datatype="html">
+        <source>AI Tutor</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/chat-widget/chat-widget.ts</context>
+          <context context-type="linenumber">24,26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="chatWidget.loadError" datatype="html">
+        <source> The AI Tutor widget couldn&apos;t load. Please check your connection and try refreshing the page. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/chat-widget/chat-widget.ts</context>
+          <context context-type="linenumber">34,36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="header.brand" datatype="html">
+        <source>Homework Tutora</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/header/header.ts</context>
+          <context context-type="linenumber">22,24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="header.nav.home" datatype="html">
+        <source>Home</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/header/header.ts</context>
+          <context context-type="linenumber">33,35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="header.nav.aiTutor" datatype="html">
+        <source>AI Tutor</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/header/header.ts</context>
+          <context context-type="linenumber">39,42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="header.langSwitch.groupLabel" datatype="html">
+        <source>Language</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/header/header.ts</context>
+          <context context-type="linenumber">44,45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="themeToggle.ariaLabel.toLight" datatype="html">
+        <source>Switch to light theme</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/theme-toggle/theme-toggle.ts</context>
+          <context context-type="linenumber">15,16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="themeToggle.ariaLabel.toDark" datatype="html">
+        <source>Switch to dark theme</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/theme-toggle/theme-toggle.ts</context>
+          <context context-type="linenumber">24,25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="themeToggle.srOnlyLabel" datatype="html">
+        <source>Toggle theme</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/theme-toggle/theme-toggle.ts</context>
+          <context context-type="linenumber">79,82</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

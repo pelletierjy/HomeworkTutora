@@ -1,17 +1,10 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, afterNextRender, computed, inject } from '@angular/core';
-import { ThemeService } from '../../../core/services/theme.service';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, afterNextRender, computed, inject, signal } from '@angular/core';
+import { environment } from '@environments/environment';
+import { ThemeStore } from '@core/state/theme.store';
+import { LocaleSwitchService } from '@core/services/locale-switch.service';
 
-const WIDGET_SCRIPT_SRC = 'https://pelletierjy.github.io/ConversiaCore/conversia-core-widget.js';
+const WIDGET_SCRIPT_SRC = environment.conversiaCore.scriptUrl;
 const CUSTOM_ELEMENT_TAG = 'conversia-app';
-
-function loadConversiaWidgetScript(): void {
-  if (customElements.get(CUSTOM_ELEMENT_TAG)) return;
-  if (document.querySelector(`script[src="${WIDGET_SCRIPT_SRC}"]`)) return;
-  const script = document.createElement('script');
-  script.type = 'module';
-  script.src = WIDGET_SCRIPT_SRC;
-  document.head.appendChild(script);
-}
 
 @Component({
   selector: 'app-chat-widget',
@@ -27,29 +20,53 @@ function loadConversiaWidgetScript(): void {
           🎓
         </div>
         <div>
-          <h2 class="font-display text-lg font-semibold">Homework Tutora</h2>
-          <p class="text-sm opacity-90">AI Tutor</p>
+          <h2 class="font-display text-lg font-semibold" i18n="@@chatWidget.brand">Homework Tutora</h2>
+          <p class="text-sm opacity-90" i18n="@@chatWidget.subtitle">AI Tutor</p>
         </div>
       </header>
 
       <!-- ConversiaCore embedded tutor widget — fills remaining space -->
-      <div class="min-h-0 flex-1">
-        <conversia-app
-          context="HomeworkTutora"
-          [attr.theme]="theme()"
-          lang="en"
-          class="block h-full w-full"
-        ></conversia-app>
-      </div>
+      @if (loadFailed()) {
+        <div
+          class="flex flex-1 items-center justify-center p-6 text-center text-sm text-[rgb(var(--color-text-secondary))]"
+        >
+          <p i18n="@@chatWidget.loadError">
+            The AI Tutor widget couldn't load. Please check your connection and try refreshing the page.
+          </p>
+        </div>
+      } @else {
+        <div class="min-h-0 flex-1">
+          <conversia-app
+            [attr.context]="context"
+            [attr.theme]="theme()"
+            [attr.lang]="activeLocale"
+            class="block h-full w-full"
+          ></conversia-app>
+        </div>
+      }
     </aside>
   `,
 })
 export class ChatWidgetComponent {
-  private readonly themeService = inject(ThemeService);
+  private readonly themeStore = inject(ThemeStore);
+  private readonly localeSwitch = inject(LocaleSwitchService);
 
-  readonly theme = computed(() => (this.themeService.isDark() ? 'dark' : 'light'));
+  readonly theme = computed(() => (this.themeStore.isDark() ? 'dark' : 'light'));
+  readonly context = environment.conversiaCore.context;
+  readonly activeLocale = this.localeSwitch.activeLocale;
+  readonly loadFailed = signal(false);
 
   constructor() {
-    afterNextRender(() => loadConversiaWidgetScript());
+    afterNextRender(() => this.loadConversiaWidgetScript());
+  }
+
+  private loadConversiaWidgetScript(): void {
+    if (customElements.get(CUSTOM_ELEMENT_TAG)) return;
+    if (document.querySelector(`script[src="${WIDGET_SCRIPT_SRC}"]`)) return;
+    const script = document.createElement('script');
+    script.type = 'module';
+    script.src = WIDGET_SCRIPT_SRC;
+    script.onerror = () => this.loadFailed.set(true);
+    document.head.appendChild(script);
   }
 }

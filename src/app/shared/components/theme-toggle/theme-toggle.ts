@@ -1,15 +1,35 @@
 import { Component, inject } from '@angular/core';
-import { ThemeService } from '../../../core/services/theme.service';
+import { NgTemplateOutlet } from '@angular/common';
+import { Dispatcher } from '@ngrx/signals/events';
+import { ThemeStore } from '@core/state/theme.store';
+import { themeEvents } from '@core/state/theme.events';
 
 @Component({
   selector: 'app-theme-toggle',
   standalone: true,
+  imports: [NgTemplateOutlet],
   template: `
-    <button
-      (click)="toggle()"
-      [attr.aria-label]="isDark() ? 'Switch to light theme' : 'Switch to dark theme'"
-      class="relative isolate flex h-9 w-16 cursor-pointer items-center rounded-full p-1 outline-none transition-colors focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
-    >
+    @if (isDark()) {
+      <button
+        (click)="toggle()"
+        aria-label="Switch to light theme"
+        i18n-aria-label="@@themeToggle.ariaLabel.toLight"
+        class="relative isolate flex h-9 w-16 cursor-pointer items-center rounded-full p-1 outline-none transition-colors focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
+      >
+        <ng-container *ngTemplateOutlet="buttonContent" />
+      </button>
+    } @else {
+      <button
+        (click)="toggle()"
+        aria-label="Switch to dark theme"
+        i18n-aria-label="@@themeToggle.ariaLabel.toDark"
+        class="relative isolate flex h-9 w-16 cursor-pointer items-center rounded-full p-1 outline-none transition-colors focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
+      >
+        <ng-container *ngTemplateOutlet="buttonContent" />
+      </button>
+    }
+
+    <ng-template #buttonContent>
       <!-- Background track -->
       <span
         class="absolute inset-0 rounded-full transition-colors"
@@ -56,16 +76,17 @@ import { ThemeService } from '../../../core/services/theme.service';
         }
       </span>
       <!-- Hidden label for accessibility -->
-      <span class="sr-only">Toggle theme</span>
-    </button>
+      <span class="sr-only" i18n="@@themeToggle.srOnlyLabel">Toggle theme</span>
+    </ng-template>
   `,
 })
 export class ThemeToggleComponent {
-  private readonly themeService = inject(ThemeService);
+  private readonly themeStore = inject(ThemeStore);
+  private readonly dispatcher = inject(Dispatcher);
 
-  readonly isDark = this.themeService.isDark;
+  readonly isDark = this.themeStore.isDark;
 
   toggle(): void {
-    this.themeService.toggleTheme();
+    this.dispatcher.dispatch(themeEvents.toggled());
   }
 }
