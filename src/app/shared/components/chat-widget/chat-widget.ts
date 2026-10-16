@@ -57,7 +57,28 @@ export class ChatWidgetComponent {
   readonly loadFailed = signal(false);
 
   constructor() {
-    afterNextRender(() => this.loadConversiaWidgetScript());
+    afterNextRender(() => {
+      this.injectClientCredential();
+      this.loadConversiaWidgetScript();
+    });
+  }
+
+  /**
+   * Delivers the ConversiaCore client credential via runtime injection
+   * (window.conversiaClient) — never via the launch URL or the widget bundle, per
+   * ConversiaCore's contracts/embedder-injection.md (FR-020). The widget reads the
+   * global lazily on its first AI request, so injecting just before the script loads
+   * is always early enough. With no key configured the widget degrades with its
+   * friendly "not configured" message instead of erroring.
+   */
+  private injectClientCredential(): void {
+    const { remoteId, clientKey } = environment.conversiaCore;
+    if (!remoteId || !clientKey) return;
+    (
+      window as unknown as {
+        conversiaClient?: { version: number; remoteId: string; key: string };
+      }
+    ).conversiaClient = { version: 1, remoteId, key: clientKey };
   }
 
   private loadConversiaWidgetScript(): void {
