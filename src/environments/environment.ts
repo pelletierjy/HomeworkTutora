@@ -4,12 +4,11 @@ export const environment = {
     scriptUrl: 'https://pelletierjy.github.io/ConversiaCore/conversia-core-widget.js',
     context: 'HomeworkTutora',
     // Operator-issued embedding credential (ConversiaCore feature 002-secure-embed-telemetry).
-    // Issue once: node tools/conversia-admin/index.js client add --remote-id homeworktutora
-    // Keep EMPTY until issued: the widget degrades with a friendly "not configured" message.
-    // Must be filled BEFORE deploying a ConversiaCore worker that enforces the credential
-    // gate (see ConversiaCore specs/002-secure-embed-telemetry/release-notes.md).
-    // (Filled 2026-10-16 — rotate with: node tools/conversia-admin/index.js client rotate --remote-id homeworktutora)
+    // NEVER committed: values are injected at build time by scripts/inject-conversia-env.mjs
+    // from the CONVERSIA_REMOTE_ID / CONVERSIA_CLIENT_KEY env vars (set them in Vercel →
+    // Settings → Environment Variables, Production scope). Empty -> the widget degrades
+    // with its friendly "not configured" message.
     remoteId: 'homeworktutora',
-    clientKey: 'cvk_homeworktutora_Pcg1b3wnNP1RHyLxcWnuw4qdM9SAUybWSjpFAqR3-8w',
+    clientKey: '',
   },
 };

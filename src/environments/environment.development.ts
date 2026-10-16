@@ -3,9 +3,11 @@ export const environment = {
   conversiaCore: {
     scriptUrl: 'https://pelletierjy.github.io/ConversiaCore/conversia-core-widget.js',
     context: 'HomeworkTutora',
-    // Dev credential (ConversiaCore feature 002-secure-embed-telemetry); empty until an
-    // operator issues a key — the widget then degrades with its friendly message.
+    // Dev credential (ConversiaCore feature 002-secure-embed-telemetry): never committed.
+    // For local testing, export CONVERSIA_REMOTE_ID / CONVERSIA_CLIENT_KEY and run
+    // `node scripts/inject-conversia-env.mjs` before `ng build`, or paste values here
+    // locally (keep them out of commits). Empty -> friendly "not configured" message.
     remoteId: 'homeworktutora',
-    clientKey: 'cvk_homeworktutora_Pcg1b3wnNP1RHyLxcWnuw4qdM9SAUybWSjpFAqR3-8w',
+    clientKey: '',
   },
 };
